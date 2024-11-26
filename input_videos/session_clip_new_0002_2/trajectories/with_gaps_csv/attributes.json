@@ -1,0 +1,21 @@
+{
+    "version": "5.2.12",
+    "video_paths": [
+        "C:\\Users\\prana\\Zebrafish-Project\\input_videos\\clip_new_0002.mp4"
+    ],
+    "frames_per_second": 65,
+    "body_length": 293.0,
+    "stats": {
+        "estimated_accuracy": 0.9994525947011167,
+        "estimated_accuracy_after_interpolation": 1.0,
+        "percentage_identified": 0.9420512820512821,
+        "estimated_accuracy_identified": 1.0
+    },
+    "setup_points": {},
+    "identities_labels": [
+        "1",
+        "2"
+    ],
+    "identities_groups": {},
+    "length_unit": null
+}
