@@ -1,0 +1,161 @@
+{
+    "number_of_error_frames": 12,
+    "estimated_accuracy": 0.9994525947011167,
+    "accumulation_trial": 0,
+    "identities_labels": null,
+    "video_paths": [
+        "C:\\Users\\prana\\Zebrafish-Project\\input_videos\\clip_new_0002.mp4"
+    ],
+    "number_of_animals": 2,
+    "intensity_ths": [
+        19,
+        255
+    ],
+    "area_ths": [
+        3631.0,
+        Infinity
+    ],
+    "name": "clip_new_0002_2",
+    "tracking_intervals": [
+        [
+            0,
+            19500
+        ]
+    ],
+    "resolution_reduction": 1.0,
+    "roi_list": null,
+    "use_bkg": true,
+    "knowledge_transfer_folder": null,
+    "check_segmentation": false,
+    "identity_transfer": false,
+    "track_wo_identities": false,
+    "frames_per_episode": 500,
+    "background_subtraction_stat": "median",
+    "number_of_frames_for_background": 50,
+    "number_of_parallel_workers": 8,
+    "data_policy": "idmatcher.ai",
+    "id_image_size": [
+        208,
+        208,
+        1
+    ],
+    "protocol3_action": "ask",
+    "convert_trajectories_to_csv_and_json": true,
+    "add_time_column_to_csv": false,
+    "exclusive_rois": false,
+    "identity_transfer_succeded": false,
+    "bounding_box_images_in_ram": false,
+    "version": "5.2.12",
+    "accumulation_statistics_data": [
+        {
+            "n_accumulated_global_fragments": [
+                1
+            ],
+            "n_non_certain_global_fragments": [
+                1
+            ],
+            "n_randomly_assigned_global_fragments": [
+                3
+            ],
+            "n_nonconsistent_global_fragments": [
+                0
+            ],
+            "n_nonunique_global_fragments": [
+                0
+            ],
+            "n_acceptable_global_fragments": [
+                228
+            ],
+            "ratio_of_accumulated_images": [
+                0.08927785116688683
+            ]
+        }
+    ],
+    "original_width": 1460,
+    "original_height": 636,
+    "frames_per_second": 65,
+    "number_of_frames": 19500,
+    "session_folder": "C:\\Users\\prana\\Zebrafish-Project\\input_videos\\session_clip_new_0002_2",
+    "first_frame_first_global_fragment": [
+        7848
+    ],
+    "identities_groups": {},
+    "setup_points": {},
+    "timers": {
+        "Tracking session": {
+            "name": "Tracking session",
+            "start_time": "2024-11-06T10:25:46.294701",
+            "finish_time": "2024-11-06T10:32:53.149259"
+        },
+        "Animal detection": {
+            "name": "Animal detection",
+            "start_time": "2024-11-06T10:25:46.374279",
+            "finish_time": "2024-11-06T10:26:05.943423"
+        },
+        "Crossing detection": {
+            "name": "Crossing detection",
+            "start_time": "2024-11-06T10:26:06.134970",
+            "finish_time": "2024-11-06T10:27:48.015203"
+        },
+        "Fragmentation": {
+            "name": "Fragmentation",
+            "start_time": "2024-11-06T10:27:48.311875",
+            "finish_time": "2024-11-06T10:27:48.495071"
+        },
+        "Tracking": {
+            "name": "Tracking",
+            "start_time": "2024-11-06T10:27:48.832532",
+            "finish_time": "2024-11-06T10:32:44.730240"
+        },
+        "Accumulation": {
+            "name": "Accumulation",
+            "start_time": "2024-11-06T10:27:48.914480",
+            "finish_time": "2024-11-06T10:32:39.698921"
+        },
+        "Identification": {
+            "name": "Identification",
+            "start_time": "2024-11-06T10:32:39.698921",
+            "finish_time": "2024-11-06T10:32:44.391848"
+        },
+        "Trajectories creation": {
+            "name": "Trajectories creation",
+            "start_time": "2024-11-06T10:32:45.134472",
+            "finish_time": "2024-11-06T10:32:53.142998"
+        },
+        "Impossible jumps correction": {
+            "name": "Impossible jumps correction",
+            "start_time": "2024-11-06T10:32:45.138224",
+            "finish_time": "2024-11-06T10:32:45.272348"
+        },
+        "Crossings solver": {
+            "name": "Crossings solver",
+            "start_time": "2024-11-06T10:32:45.691271",
+            "finish_time": "2024-11-06T10:32:52.392559"
+        }
+    },
+    "median_body_length": 293.0,
+    "ratio_accumulated_images": 0.9991468516072215,
+    "percentage_of_accumulated_images": [
+        0.9991468516072215
+    ],
+    "velocity_threshold": 67.98631605914179,
+    "individual_fragments_stats": {
+        "fragments": 479,
+        "crossing_fragments": 81,
+        "individual_fragments": 398,
+        "individual_fragments_not_in_a_global_fragment": 29,
+        "accumulable_individual_fragments": 292,
+        "not_accumulable_individual_fragments": 77,
+        "globally_accumulated_individual_fragments": 288,
+        "partially_accumulated_individual_fragments": 0,
+        "blobs": 37003,
+        "crossing_blobs": 467,
+        "individual_blobs": 36536,
+        "individual_blobs_not_in_a_global_fragment": 29,
+        "accumulable_individual_blobs": 36336,
+        "not_accumulable_individual_blobs": 121,
+        "globally_accumulated_individual_blobs": 36305,
+        "partially_accumulated_individual_blobs": 0
+    },
+    "erosion_kernel_size": 17
+}

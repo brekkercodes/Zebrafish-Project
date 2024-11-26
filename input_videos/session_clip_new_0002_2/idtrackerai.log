@@ -1,0 +1,363 @@
+10:12:03 Welcome to idtracker.ai                                                                            init_logger.py:102
+         Running idtracker.ai '5.2.12' on Python '3.12.7'                                                   init_logger.py:103
+         Platform: 'Windows-11-10.0.26100-SP0'                                                                                
+         Date: 2024-11-06 10:12:03                                                                                            
+         Writing log in C:\Windows\System32\idtrackerai.log                                                 init_logger.py:108
+         Using NumPy 2.0.1                                                                                  init_logger.py:109
+         No parameter files detected                                                                            __main__.py:50
+         No terminal arguments detected                                                                         __main__.py:58
+         Initializing SegmentationGUI with PyQt5 5.15.11                                                   GUI_main_base.py:39
+10:13:08 Generating frame stack for background subtraction with 50 samples                                 segmentation.py:251
+10:13:09 Computing background (50 iterations). It took 0:00:01                                             segmentation.py:279
+         Computing background from a frame stack using 'median'                                            segmentation.py:313
+10:25:43 GUI params:                                                                                               main.py:290
+                         video_paths=['C:\\Users\\prana\\Zebrafish-Project\\input_videos\\clip_new_0002.mp4']                 
+                       intensity_ths=[19, 255]                                                                                
+                            area_ths=[3631.0, inf]                                                                            
+                  tracking_intervals=None                                                                                     
+                   number_of_animals=2                                                                                        
+                             use_bkg=True                                                                                     
+                  check_segmentation=False                                                                                    
+                resolution_reduction=1.0                                                                                      
+                 track_wo_identities=False                                                                                    
+                            roi_list=None                                                                                     
+         background_subtraction_stat='median'                                                                                 
+10:25:45 Using PyTorch 2.5.1                                                                                       utils.py:18
+         Using Cuda backend with "NVIDIA GeForce RTX 4060 Laptop GPU"                                              utils.py:31
+10:25:46 START Tracking session                                                                                      run.py:26
+         Initializing Session                                                                                   session.py:146
+         Setting video paths to:                                                                                session.py:155
+             C:\Users\prana\Zebrafish-Project\input_videos\clip_new_0002.mp4                                                  
+         The session has 19500 frames (39 episodes)                                                             session.py:195
+         No session name provided, assigning name "clip_new_0002"                                               session.py:214
+         A session with the assigned name ("clip_new_0002") already exists, renaming current session to         session.py:224
+         "clip_new_0002_2"                                                                                                    
+         Directory C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2 has been created       session.py:234
+         Directory C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing has been session.py:235
+         created                                                                                                              
+         Number of parallel jobs: 8                                                                             session.py:256
+         Background saved at                                                                                    session.py:312
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\background.png                   
+         Saving Session object in                                                                                   run.py:111
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\session.json                                   
+         START Animal detection                                                                                py_utils.py:218
+         Directory                                                                                     animals_detection.py:19
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\bounding_box_images has                        
+         been created                                                                                                         
+         Using previously computed background model from GUI                                           animals_detection.py:31
+         Segmenting video, 39 episodes in 8 parallel jobs                                                  segmentation.py:207
+         Saving bounding box images in                                                                     segmentation.py:210
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\bounding_box_images                            
+10:26:05 Segmenting video (39 iterations). It took 0:00:19                                                 segmentation.py:231
+         Generating ListOfBlobs object                                                                     list_of_blobs.py:26
+         37003 detected blobs in total                                                                 animals_detection.py:64
+         WARNING There are 12 frames with more blobs than animals                                     animals_detection.py:100
+         WARNING This can be detrimental for the proper functioning of the system                     animals_detection.py:112
+         WARNING Frames with more blobs than animals: [916, 6826, 10609, 10703, 10704, 10705, 10706,  animals_detection.py:114
+         10707, 10708, 13019, 13975, 15710]                                                                                   
+         Saving indices of frames with more blobs than animals in                                     animals_detection.py:121
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\inconsistent_frames.cs                         
+         v                                                                                                                    
+         Check_segmentation is False, ignoring the above errors                                       animals_detection.py:132
+         FINISH Animal detection, it took 0:00:19                                                              py_utils.py:223
+         Saving Session object in                                                                                   run.py:111
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\session.json                                   
+         Saving ListOfBlobs at                                                                                      run.py:113
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_blobs.pickle             
+10:26:06 START Crossing detection                                                                              py_utils.py:218
+         Computing body lengths (19500 iterations). It took 0:00:00                                           model_area.py:82
+         Median body length: 293.0 pixels                                                                     model_area.py:95
+         Identification image size set to [208, 208, 1]                                                         session.py:289
+         Directory C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\identification_images  __init__.py:27
+         has been created                                                                                                     
+10:26:10 Setting images for identification (39 iterations). It took 0:00:04                               list_of_blobs.py:216
+10:26:11 Connecting blobs (19500 iterations). It took 0:00:00                                              list_of_blobs.py:68
+         Classifying Blobs as individuals or crossings depending on their area and the number of blobs crossing_detector.py:27
+         in the frame                                                                                                         
+         Initializing ModelArea for individual/crossing blob initial classification                           model_area.py:40
+         Model area computed with 34976 blobs. Mean area = 6958.0, median = 6534.8, and std = 1674.3 (in      model_area.py:66
+         pixels)                                                                                                              
+         Get list of blobs for training, validation and eval                                           crossings_dataset.py:19
+         First individual/crossing assignment (19500 iterations). It took 0:00:00                      crossings_dataset.py:23
+10:26:12 35163 sure individuals and 341 sure crossings                                                 crossings_dataset.py:47
+         2700 individual and 307 crossing blobs for training                                           crossings_dataset.py:87
+         300 individual and 34 crossing blobs for validation                                                                  
+         1499 unknown blobs                                                                            crossing_detector.py:57
+         There are enough crossings to train the crossing detector                                     crossing_detector.py:67
+         Loading identification images from disk (39 iterations). It took 0:00:00                              py_utils.py:458
+         Creating training dataloader with 3007 images labeled with 2 distinct classes                            train.py:229
+         Loading identification images from disk (39 iterations). It took 0:00:00                              py_utils.py:458
+         Creating validation dataloader with 334 images labeled with 2 distinct classes                           train.py:229
+         Setting crossing detector network parameters                                                  crossing_detector.py:82
+         Saving NetworkParams at                                                                          network_params.py:74
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\crossings_detector\model_p                     
+         arams.json                                                                                                           
+         Directory                                                                                        network_params.py:75
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\crossings_detector has                         
+         been created                                                                                                         
+         Creating CNN model                                                                                       models.py:12
+         Reinitializing model                                                                                     models.py:47
+         Entering the training loop...                                                                            train.py:117
+10:27:38 The individual accuracies in validation is 100%, we stop the training                                    train.py:133
+         Last epoch: Epoch 11: training loss = 0.00000, validation loss = 0.00233 and accuracy = 100.000%         train.py:134
+         Network trained                                                                                          train.py:135
+         Saving model at                                                                                        learners.py:92
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\crossings_detector\crossing_dete               
+         ctor.model.pth                                                                                                       
+         Using crossing detector to classify individuals and crossings                                crossing_detector.py:134
+         Predicting crossings of 1499 images                                                                _contextlib.py:116
+         Creating test IdentificationDataset with 1499 images                                                     train.py:299
+10:27:47 Predicting crossings (3 iterations). It took 0:00:08                                                     train.py:278
+         Prediction results: 1373 individuals and 126 crossings                                       crossing_detector.py:142
+         Updating crossings in identification images files                                                list_of_blobs.py:258
+10:27:48 FINISH Crossing detection, it took 0:01:41                                                            py_utils.py:223
+         Saving Session object in                                                                                   run.py:111
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\session.json                                   
+         Saving ListOfBlobs at                                                                                      run.py:113
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_blobs.pickle             
+         START Fragmentation                                                                                   py_utils.py:218
+         Fragmenting blobs (19500 iterations). It took 0:00:00                                             fragmentation.py:58
+         Creating list of fragments                                                                   list_of_fragments.py:591
+         Connecting coexisting fragments (479 iterations). It took 0:00:00                            list_of_fragments.py:348
+         479 Fragments in total, 398 individuals and 81 crossings                                          fragmentation.py:29
+         Total number of Global Fragments: 288                                                  list_of_global_fragments.py:47
+         Of which 233 are long enough to be accumulated                                         list_of_global_fragments.py:51
+         FINISH Fragmentation, it took 0:00:00                                                                 py_utils.py:223
+         Saving Session object in                                                                                   run.py:111
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\session.json                                   
+         Saving ListOfBlobs at                                                                                      run.py:113
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_blobs.pickle             
+         Saving ListOfFragments as                                                                                  run.py:115
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_fragments.json           
+         Saving ListOfGlobalFragments at                                                                            run.py:117
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_global_fragmen           
+         ts.json                                                                                                              
+         START Tracking                                                                                        py_utils.py:218
+         Deleting ListOfBlobs to save memory, it will be reloaded from disk after tracking                      __init__.py:38
+         Tracking with identities                                                                                tracker.py:36
+         Directory C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\accumulation_0 has been tracker.py:38
+         created                                                                                                              
+         Saving NetworkParams at                                                                          network_params.py:74
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\accumulation_0\model_param                     
+         s.json                                                                                                               
+         Directory C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\accumulation_0   network_params.py:75
+         already exists                                                                                                       
+         START Accumulation                                                                                    py_utils.py:218
+         Resetting ListOfFragments to 'fragmentation'                                                            tracker.py:63
+         Creating CNN model                                                                                       models.py:12
+         Reinitializing model                                                                                     models.py:47
+10:27:49 Using the Global Fragment starting at frame 7848 as the first one in accumulation             identity_transfer.py:22
+         Tracking without identity transfer, assigning random initial identities                       identity_transfer.py:57
+         Initializing accumulation manager                                                          accumulation_manager.py:53
+         There are global fragments acceptable for training                                         accumulation_manager.py:79
+         Performing new accumulation, step 0                                                                 accumulator.py:37
+         3244 new images for training                                                              accumulation_manager.py:105
+         3244 images in total, 8.93% of the total accumulable                                      accumulation_manager.py:113
+         Gathered 3244 labeled images (new and used) for continuous training                       accumulation_manager.py:186
+         Loading identification images from disk (6 iterations). It took 0:00:00                               py_utils.py:458
+         Creating training dataloader with 2919 images labeled with 2 distinct classes                            train.py:229
+         Creating validation dataloader with 325 images labeled with 2 distinct classes                           train.py:229
+         Entering the training loop...                                                                            train.py:117
+10:29:05 The individual accuracies in validation is 100%, we stop the training                                    train.py:133
+         Last epoch: Epoch 11: training loss = 0.00008, validation loss = 0.00087 and accuracy = 100.000%         train.py:134
+         Network trained                                                                                          train.py:135
+         Updating fragments used for training                                                      accumulation_manager.py:272
+10:29:06 Update images and labels used for training                                                accumulation_manager.py:257
+         Assigning identities to accumulated global fragments                                      accumulation_manager.py:293
+         Using a sample of all accumulated images to test model's overall accuracy                          accumulator.py:183
+         Creating test IdentificationDataset with 3244 images                                                     train.py:299
+10:29:11 Current model has an overall accuracy of 100.000%                                                  accumulator.py:189
+         Saving model at                                                                                        learners.py:92
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\accumulation_0\identification_ne               
+         twork.model.pth                                                                                                      
+         Generating predictions on remaining global fragments                                               accumulator.py:142
+         Predicting identities of 33292 images                                                              _contextlib.py:116
+         Creating test IdentificationDataset with 33292 images                                                    train.py:299
+10:29:31 Predicting identities (67 iterations). It took 0:00:20                                                   train.py:278
+10:29:32 Computing fragment prediction statistics                                                  accumulation_manager.py:311
+         Accumulating by global strategy                                                           accumulation_manager.py:416
+         Global prediction results:                                                                accumulation_manager.py:392
+             Acceptable global fragments: 228                                                                                 
+             Non acceptable global fragments: 4                                                                               
+                 Non certain: 1                                                                                               
+                 Non significant: 3                                                                                           
+                 Non consistent: 0                                                                                            
+                 Non unique: 0                                                                                                
+         Global accumulation succeeded                                                             accumulation_manager.py:431
+         There are global fragments acceptable for training                                         accumulation_manager.py:79
+         Performing new accumulation, step 1                                                                 accumulator.py:37
+         33061 new images for training                                                             accumulation_manager.py:105
+         3244 old images for training                                                              accumulation_manager.py:110
+         36305 images in total, 99.91% of the total accumulable                                    accumulation_manager.py:113
+         Gathered 6000 labeled images (new and used) for continuous training                       accumulation_manager.py:186
+         Loading identification images from disk (39 iterations). It took 0:00:00                              py_utils.py:458
+         Creating training dataloader with 5400 images labeled with 2 distinct classes                            train.py:229
+         Creating validation dataloader with 600 images labeled with 2 distinct classes                           train.py:229
+         Entering the training loop...                                                                            train.py:117
+10:32:30 Overfitting                                                                                              train.py:133
+         Last epoch: Epoch 15: training loss = 0.00005, validation loss = 0.03169 and accuracy = 99.667%          train.py:134
+         Network trained                                                                                          train.py:135
+10:32:31 Updating fragments used for training                                                      accumulation_manager.py:272
+         Update images and labels used for training                                                accumulation_manager.py:257
+         Assigning identities to accumulated global fragments                                      accumulation_manager.py:293
+         Using a sample of all accumulated images to test model's overall accuracy                          accumulator.py:183
+         Creating test IdentificationDataset with 6000 images                                                     train.py:299
+10:32:39 Current model has an overall accuracy of 99.417%                                                   accumulator.py:189
+         Saving model at                                                                                        learners.py:92
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\accumulation_0\identification_ne               
+         twork.model.pth                                                                                                      
+         The ratio of accumulated images is higher than 99.9%, stopping accumulation by early stopping      accumulator.py:128
+         criteria                                                                                                             
+         We don't need to accumulate more images                                                                tracker.py:175
+         We accumulated enough images                                                                           tracker.py:184
+         Saving first accumulation parameters                                                                   tracker.py:191
+         Saving Session object in                                                                               tracker.py:200
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\session.json                                   
+         Saving ListOfFragments as                                                                              tracker.py:201
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_fragments.               
+         json                                                                                                                 
+         Saving ListOfFragments as                                                                              tracker.py:202
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\accumulation_0\list_of_fragments               
+         .json                                                                                                                
+         Saving ListOfGlobalFragments at                                                                        tracker.py:203
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_global_fra               
+         gments.json                                                                                                          
+         FINISH Accumulation, it took 0:04:50                                                                  py_utils.py:223
+         START Identification                                                                                  py_utils.py:218
+         WARNING                                                                                               warnings.py:112
+         C:\Users\prana\anaconda3\envs\idtrackerai\Lib\site-packages\idtrackerai\base\tracker\assigner.py:58:                 
+         FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value),                     
+         which uses the default pickle module implicitly. It is possible to construct malicious pickle data                   
+         which will execute arbitrary code during unpickling (See                                                             
+         https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a                    
+         future release, the default value for `weights_only` will be flipped to `True`. This limits the                      
+         functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be                
+         loaded via this mode unless they are explicitly allowlisted by the user via                                          
+         `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any                   
+         use case where you don't have full control of the loaded file. Please open an issue on GitHub for any                
+         issues related to this experimental feature.                                                                         
+           last_model: dict = load(network_params.model_path)                                                                 
+                                                                                                                              
+         WARNING                                                                                               warnings.py:112
+         C:\Users\prana\anaconda3\envs\idtrackerai\Lib\site-packages\idtrackerai\base\tracker\assigner.py:61:                 
+         FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value),                     
+         which uses the default pickle module implicitly. It is possible to construct malicious pickle data                   
+         which will execute arbitrary code during unpickling (See                                                             
+         https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a                    
+         future release, the default value for `weights_only` will be flipped to `True`. This limits the                      
+         functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be                
+         loaded via this mode unless they are explicitly allowlisted by the user via                                          
+         `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any                   
+         use case where you don't have full control of the loaded file. Please open an issue on GitHub for any                
+         issues related to this experimental feature.                                                                         
+           penultimate_model: dict = load(network_params.penultimate_model_path)                                              
+                                                                                                                              
+         Last accuracy = 99.42%, Last ratio accumulated = 99.91%                                                assigner.py:64
+         Penultimate accuracy = 100.00%, Penultimate ratio accumulated = 8.93%                                                
+         The penultimate accumulation step had a ration of accumulated images lower than 90%. Thus, it will be  assigner.py:72
+         ignored.                                                                                                             
+         Assigning identities to all non-accumulated individual fragments                                      assigner.py:126
+         Resetting ListOfFragments to 'accumulation'                                                           assigner.py:127
+         Number of unidentified individual fragments: 110                                                      assigner.py:131
+         Number of images to identify non-accumulated fragments: 231                                           assigner.py:144
+         Predicting identities of 231 images                                                                _contextlib.py:116
+         Creating test IdentificationDataset with 231 images                                                      train.py:299
+10:32:44 Predicting identities (1 iterations). It took 0:00:04                                                    train.py:278
+         231 generated predictions between identities {np.int32(1), np.int32(2)}                               assigner.py:153
+         Assigning identities                                                                                  assigner.py:164
+         FINISH Identification, it took 0:00:04                                                                py_utils.py:223
+         Updating identities in identification images files                                           list_of_fragments.py:187
+         Loading ListOfBlobs from                                                                               __init__.py:54
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_blobs.pick               
+         le                                                                                                                   
+         FINISH Tracking, it took 0:04:55                                                                      py_utils.py:223
+         Saving Session object in                                                                                   run.py:111
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\session.json                                   
+         Saving ListOfBlobs at                                                                                      run.py:113
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_blobs.pickle             
+10:32:45 Saving ListOfFragments as                                                                                  run.py:115
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_fragments.json           
+         Saving ListOfGlobalFragments at                                                                            run.py:117
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_global_fragmen           
+         ts.json                                                                                                              
+         START Trajectories creation                                                                           py_utils.py:218
+         START Impossible jumps correction                                                                     py_utils.py:218
+         Computing velocity model (unknown iterations). It took 0:00:00                           compute_velocity_model.py:28
+         Correcting impossible velocity jumps to_the_past (259 iterations). It took 0:00:00    correct_impossible_jumps.py:354
+         Correcting impossible velocity jumps to_the_future (219 iterations). It took 0:00:00  correct_impossible_jumps.py:354
+         Final statistics:                                                                            list_of_fragments.py:560
+           479 fragments                                                                                                      
+           81 crossing fragments                                                                                              
+           398 individual fragments                                                                                           
+           29 individual fragments not in a global fragment                                                                   
+           292 accumulable individual fragments                                                                               
+           77 not accumulable individual fragments                                                                            
+           288 globally accumulated individual fragments                                                                      
+           0 partially accumulated individual fragments                                                                       
+           37003 blobs                                                                                                        
+           467 crossing blobs                                                                                                 
+           36536 individual blobs                                                                                             
+           29 individual blobs not in a global fragment                                                                       
+           36336 accumulable individual blobs                                                                                 
+           121 not accumulable individual blobs                                                                               
+           36305 globally accumulated individual blobs                                                                        
+           0 partially accumulated individual blobs                                                                           
+         Saving ListOfFragments as                                                                 trajectories_creation.py:66
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_                            
+         of_fragments.json                                                                                                    
+         Updating list of blobs from list of fragments                                                list_of_fragments.py:637
+         FINISH Impossible jumps correction, it took 0:00:00                                                   py_utils.py:223
+         Directory                                                                                 trajectories_creation.py:32
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories has                               
+         been created                                                                                                         
+         Producing trajectories (19500 iterations). It took 0:00:00                                     get_trajectories.py:38
+         Saving trajectories with gaps in                                                          trajectories_creation.py:39
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories\with_g                            
+         aps.npy                                                                                                              
+         Directory                                                                                   trajectories_to_csv.py:45
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories\with_gap                          
+         s_csv has been created                                                                                               
+         Converting                                                                                  trajectories_to_csv.py:47
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories\with_gap                          
+         s.npy to .csv and .json                                                                                              
+         START Crossings solver                                                                                py_utils.py:218
+         Forced 14 non identified Fragments to be crossings                                              assign_them_all.py:29
+         Updating list of blobs from list of fragments                                                list_of_fragments.py:637
+         Saving ListOfFragments as                                                                      assign_them_all.py:600
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_of_fr                       
+         agments.json                                                                                                         
+10:32:52 Closing gaps, iteration 0 (19499 iterations). It took 0:00:00                                  assign_them_all.py:418
+         Closing gaps, iteration 1 (19499 iterations). It took 0:00:00                                  assign_them_all.py:418
+         FINISH Crossings solver, it took 0:00:06                                                              py_utils.py:223
+         Saving ListOfBlobs at                                                                     trajectories_creation.py:91
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\preprocessing\list_                            
+         of_blobs.pickle                                                                                                      
+         Generating trajectories. The trajectories files are stored in                             trajectories_creation.py:93
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories\withou                            
+         t_gaps.npy                                                                                                           
+         Producing trajectories (19500 iterations). It took 0:00:00                                     get_trajectories.py:38
+         Directory                                                                                   trajectories_to_csv.py:45
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories\without_                          
+         gaps_csv has been created                                                                                            
+         Converting                                                                                  trajectories_to_csv.py:47
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories\without_                          
+         gaps.npy to .csv and .json                                                                                           
+         Saving improved trajectories with gaps                                                   trajectories_creation.py:115
+10:32:53 Producing trajectories (19500 iterations). It took 0:00:00                                     get_trajectories.py:38
+         Directory                                                                                   trajectories_to_csv.py:45
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories\with_gap                          
+         s_csv has been emptied                                                                                               
+         Converting                                                                                  trajectories_to_csv.py:47
+         C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\trajectories\with_gap                          
+         s.npy to .csv and .json                                                                                              
+         FINISH Trajectories creation, it took 0:00:08                                                         py_utils.py:223
+         FINISH Tracking session, it took 0:07:06                                                                    run.py:67
+         Saving Session object in C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\session.json run.py:68
+         Estimated accuracy: 99.9453%                                                                                run.py:75
+         Data policy: "idmatcher.ai"                                                                            session.py:850
+         Directory C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\bounding_box_images    session.py:875
+         has been removed                                                                                                     
+         Directory C:\Users\prana\Zebrafish-Project\input_videos\session_clip_new_0002_2\crossings_detector has session.py:876
+         been removed                                                                                                         
+10:33:03 Compressing identification images (39 iterations). It took 0:00:10                                     session.py:885
+         Success                                                                                                     run.py:81
