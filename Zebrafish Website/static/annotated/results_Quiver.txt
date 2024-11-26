@@ -1,0 +1,3 @@
+Total Quivers Detected: 0
+
+Quivering Timestamps (in seconds):
